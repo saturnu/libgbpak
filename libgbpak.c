@@ -360,7 +360,7 @@ int _set_gbRamBank(int bank){
 		value = write_mempak_address( 0, 0xA00C, sdata ); //prepare for ram enable
 
 		//create second test version with 0x00?
-		memset(sdata, 0x0A, 32); // disable only -> for 0A enable setting - set PHI=pin1 high first on hardware, too?
+		memset(sdata, 0x0A, 32); // disable only -> for 0A enable setting - set PHI=pin2 high first on hardware, too?
 		value = write_mempak_address( 0, 0xC000, sdata ); //set ram enable for reading/writing
 
 		memset(sdata, 0x01, 32);
