@@ -728,6 +728,10 @@ int init_gbpak(void){
 	if(_get_gbRomAddr(0xC140, data)!=0) //header offset cart type
 	return -9;
 
+	gbcart.gbc = (data[3] == 0x80 || data[3] == 0xC0) ? data[3] : 0;
+ 	// 0x80 Cartridge works on both GBCs and older gameboys
+	// 0xC0 Cartridge opnly works on GBC
+	
 	gbcart.sgb = data[6]; //0x146 super gameboy functions 0x00=no 03=yes
 	gbcart._romsize = data[8];
 	gbcart._ramsize = data[9];
