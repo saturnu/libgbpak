@@ -1002,11 +1002,12 @@ int init_gbpak(void){
 		case 0x03: 	 gbcart.rambanks=4;
 					gbcart.ramsize=4*8*1024;
 					break;
-
 		case 0x04: 	gbcart.rambanks=16;
 					gbcart.ramsize=16*8*1024;
 					break;
-
+		case 0x05: 	gbcart.rambanks=8;
+					gbcart.ramsize=8*8*1024;
+					break;
 		default: 	gbcart.rambanks=0;
 					gbcart.ramsize=0;
 		}
